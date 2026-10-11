@@ -1,0 +1,6 @@
+- assembly: models/clearance-check.step
+  parts: [fixed, moving]
+  reason: Deliberate modelled engagement in this demonstration fixture.
+- assembly: models/clearance-check.step
+  parts: [retired_part, moving]
+  reason: Former fit retained to demonstrate stale-entry warnings.
