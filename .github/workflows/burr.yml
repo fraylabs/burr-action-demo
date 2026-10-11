@@ -16,7 +16,9 @@ jobs:
         id: burr
         with:
           comment: 'false'
-          files: models/clearance-check.step
+          files: |
+            models/clearance-check.step
+            models/incomplete-camera.step
           generate-accepted-fits: 'true'
       - uses: actions/upload-artifact@v4
         if: always() && steps.burr.outputs.report-path != ''
