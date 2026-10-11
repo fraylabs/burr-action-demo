@@ -1,5 +1,9 @@
 - assembly: models/clearance-check.step
-  parts: [fixed, moving]
+  parts:
+    - name: fixed
+      occurrence-name: fixed
+    - name: moving
+      occurrence-name: moving
   reason: Deliberate modelled engagement in this demonstration fixture.
 - assembly: models/clearance-check.step
   parts: [retired_part, moving]

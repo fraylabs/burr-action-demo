@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - uses: fraylabs/burr-action@08ec18f946c02c81dba9f11151dd2080c863379c
+      - uses: fraylabs/burr-action@7a5130f1f849759a681d25364d53acf30dfe2d00
         id: burr
         with:
           comment: 'false'
