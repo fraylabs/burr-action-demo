@@ -1,0 +1,9 @@
+- assembly: models/clearance-check.step
+  parts: [fixed, moving]
+  reason: Deliberate modelled engagement in this demonstration fixture.
+- assembly: models/clearance-check.step
+  parts: [retired_part, moving]
+  reason: Former fit retained to demonstrate stale-entry warnings.
+- assembly: models/incomplete-camera.step
+  parts: [m4_heat_set_insert_long_94180A353_94180A353, base_stand body]
+  reason: Intended insert fit cannot resolve or suppress incomplete geometry.
