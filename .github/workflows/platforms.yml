@@ -1,0 +1,34 @@
+name: Burr runner compatibility
+on: [workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  compatibility:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-latest, macos-14]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: fraylabs/burr-action@v1
+        with:
+          files: models/manta-mount.step
+  report-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: demo/interference
+          persist-credentials: false
+      - uses: fraylabs/burr-action@v1
+        id: burr
+        with:
+          files: models/clearance-check.step
+          fail-on-interference: 'false'
+      - name: Check report-only verdict
+        env:
+          BURR_STATUS: ${{ steps.burr.outputs.status }}
+        run: test "$BURR_STATUS" = interference
