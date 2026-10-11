@@ -15,7 +15,13 @@ licensed separately from the workflow and documentation.
 | --- | --- | --- |
 | `models/manta-mount.step` | [VoronDesign/Voron-0, Manta M4P DIN mount](https://github.com/VoronDesign/Voron-0/blob/a53fc87562fd630c846af38d7de850c894dc3d85/CAD/Electronics%20Mounts/Manta_M4P_Din_Mount_2pc.step) | GPL-3.0; [full license](licenses/Voron-GPL-3.0.txt) |
 | `models/openamr-cover.step` | [openAMRobot/openamr-platform-hw, cover assembly](https://github.com/openAMRobot/openamr-platform-hw/blob/9703a5f13ffc009db8ff3fa979470179afe3d26b/mechanical/cad/production_files/MMP.01.00.00.000%20Cover%20assembly.STEP) | CERN-OHL-P-2.0; [full license](licenses/openamr-CERN-OHL-P-2.0.txt) |
+| `models/clearance-check.step` | [Burr's separated box fixture](https://github.com/fraylabs/burr/blob/main/tests/fixtures/interference/separated.step) | MIT; [full license](licenses/Burr-MIT.txt) |
 
 Copyright remains with the original authors. License texts permit redistribution
 with their notices and source; the STEP source and original source links are
 included here. Modified demo variants identify their changes in their PR.
+
+[Failing PR](https://github.com/fraylabs/burr-action-demo/pull/1) moves the box
+fixture into positive-volume overlap. [Passing PR](https://github.com/fraylabs/burr-action-demo/pull/2)
+names the original separated Voron bodies. The two corpus assemblies remain
+available for checking with configured globs.
