@@ -1,0 +1,23 @@
+name: Burr assembly checks
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  assemblies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: fraylabs/burr-action@v1
+        id: burr
+        with:
+          comment: 'true'
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.burr.outputs.report-path != ''
+        with:
+          name: burr-reports
+          path: ${{ steps.burr.outputs.report-path }}
